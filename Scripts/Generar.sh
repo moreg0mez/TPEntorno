@@ -1,21 +1,46 @@
 #!/bin/bash
 
 
-#Aca se usa un condicional "and" para que se cumplan dos cosas: 1) que se ingrese 1 solo argumento
-# y 2) que sea un numero.
-
 if ([ $# -eq 1 ] && [[ $1 =~ ^[0-9]+$ ]]); then
   echo "Input correcto, aguarde un momento"
-  exit 0
+  NUMIMG=$1
 
 else
   echo  "Input no valido, ingrese un numero"
+  exit 1
 
 fi
 
-#Creo el directorio en donde se guardaran las imagenes del Tp del grupo 3 (tpg3)
-# y cambio el working directory a ese directorio
-mkdir imagenes_tp
+
+mkdir -p imagenes_tp
 cd imagenes_tp
+echo "Descargando imagenes... aguarde"
+
+for (( i=1; i<=$NUMIMG; i++ )); do
+
+   curl -o imagen$i "https://thispersondoesnotexist.com/"
+   echo Imagen $i descargada...
+   sleep 2
+
+done
+echo "Las imagenes fueron descargas a imaganes_tp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
