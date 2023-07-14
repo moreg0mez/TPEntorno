@@ -14,7 +14,7 @@ else
 fi
 
 #Creo el directorio en donde se guardaran las imagenes del Tp del grupo 3 (tpg3)
-# y cambio el working directory a ese directro
+# y cambio el working directory a ese directorio
 mkdir imagenes_tp
 cd imagenes_tp
 
