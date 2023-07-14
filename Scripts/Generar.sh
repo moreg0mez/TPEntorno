@@ -12,21 +12,24 @@ fi
 
 mkdir -p imagenes_tp
 cd imagenes_tp
-echo "Descargando imagenes... aguarde"
+echo "Descargando imagenes y lista de nombres..."
+curl -o lista_tp "https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv"
 
 for (( i=1; i<=$NUMIMG; i++ )); do
 
    curl -o imagen$i "https://thispersondoesnotexist.com/"
-   echo Imagen $i descargada...
+   echo Imagen $i descargada y renombrada
+   NOMBRE=$(shuf -n 1 lista_tp) # shuf toma una linea al azar y hace sustitucion de varible a NOMBRE
+   mv imagen$i "./$NOMBRE" # el ./ indica que se guarde en el directorio actual
    sleep 2
 
 done
+rm lista_tp # se borra la lista y se vuelve al dir anterior
 cd ..
-echo "Las imagenes fueron descargas a imaganes_tp"
+echo "Las imagenes fueron descargadas y renombradas al directorio imagenes_tp"
 
-echo "Descargando lista de nombres..."
-curl -o lista_tp "https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv"
-echo "Lista de nombres descargada como lista_tp"
+
+
 
 
 
