@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if ([ $# -eq 1 ] && [[ $1 =~ ^[0-9]+$ ]]); then
   echo "Input correcto, aguarde un momento"
   NUMIMG=$1
@@ -10,7 +9,6 @@ else
   exit 1
 
 fi
-
 
 mkdir -p imagenes_tp
 cd imagenes_tp
@@ -23,18 +21,12 @@ for (( i=1; i<=$NUMIMG; i++ )); do
    sleep 2
 
 done
+cd ..
 echo "Las imagenes fueron descargas a imaganes_tp"
 
-
-
-
-
-
-
-
-
-
-
+echo "Descargando lista de nombres..."
+curl -o lista_tp "https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv"
+echo "lista de nombre descargada a lista_tp"
 
 
 
