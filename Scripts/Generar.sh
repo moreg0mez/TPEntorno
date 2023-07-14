@@ -26,7 +26,24 @@ echo "Las imagenes fueron descargas a imaganes_tp"
 
 echo "Descargando lista de nombres..."
 curl -o lista_tp "https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv"
-echo "lista de nombre descargada a lista_tp"
+echo "Lista de nombres descargada como lista_tp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
