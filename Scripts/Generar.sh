@@ -9,7 +9,7 @@ else
   exit 1
 
 fi
-
+cd ..
 mkdir -p imagenes_tp
 cd imagenes_tp
 echo "Descargando imagenes y lista de nombres..."
@@ -33,8 +33,7 @@ echo "Comprimiendo imagenes..."
 zip -r imagenes_tp.zip imagenes_tp
 
 #Genero el archivo checksum
-echo "generando checksum..."
-touch chksum.txt
+echo "Generando checksum..."
 md5sum imagenes_tp.zip > chk_sum.txt #redirecciono el chechum al archivo .txt
 
 echo "TODO LISTO!"
