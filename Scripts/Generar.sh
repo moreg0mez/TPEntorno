@@ -28,6 +28,22 @@ rm lista_tp # se borra la lista y se vuelve al dir anterior
 cd ..
 echo "Las imagenes fueron descargadas y renombradas al directorio imagenes_tp"
 
+#Empaqueto y comprimo con zip
+echo "Comprimiendo imagenes..."
+zip -r imagenes_tp.zip imagenes_tp
+
+#Genero el archivo checksum
+echo "generando checksum..."
+touch chksum.txt
+md5sum imagenes_tp.zip > chk_sum.txt #redirecciono el chechum al archivo .txt
+
+echo "TODO LISTO!"
+
+exit 0
+
+
+
+
 
 
 
