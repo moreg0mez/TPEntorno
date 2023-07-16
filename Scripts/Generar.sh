@@ -19,7 +19,7 @@ for (( i=1; i<=$NUMIMG; i++ )); do
 
    curl -o imagen$i "https://thispersondoesnotexist.com/"
    echo Imagen $i descargada y renombrada
-   NOMBRE=$(shuf -n 1 lista_tp) # shuf toma una linea al azar y hace sustitucion de varible a NOMBRE
+   NOMBRE=$(shuf -n 1 lista_tp) # shuf toma una linea al azar y hace sustitucion de variable a NOMBRE
    mv imagen$i "./$NOMBRE" # el ./ indica que se guarde en el directorio actual
    sleep 2
 
@@ -39,35 +39,4 @@ md5sum imagenes_tp.zip > chk_sum.txt #redirecciono el chechum al archivo .txt
 echo "TODO LISTO!"
 
 exit 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
