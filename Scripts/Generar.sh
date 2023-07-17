@@ -5,7 +5,7 @@ if ([ $# -eq 1 ] && [[ $1 =~ ^[0-9]+$ ]]); then
   NUMIMG=$1
 
 else
-  echo  "Input no valido, ingrese un numero"
+  echo  "Input no valido, ingrese un numero como Argumento"
   exit 1
 
 fi

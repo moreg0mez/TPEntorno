@@ -15,7 +15,8 @@ fi
 [ "$#" -ne 0 ] && echo "Ejecute el script sin argumentos" && exit 1
 
 #Me aseguro que esta el imagemagick
-sudo apt-get install imagemagick
+#sudo apt-get install imagemagick
+#Esto aca no iba hay que hacerlo en el dockerfile
 
 #Creo la nueva carpeta en donde se guardaran las imagenes procesadas
 mkdir imagenes_tp_procesadas
