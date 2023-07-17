@@ -35,7 +35,7 @@ echo "Los nombres válidos fueron guardados en nombres_validos"
 
 
 #Iteramos dentro de la carpeta imagenes_tp_procesadas.
-for f in ./imagenes_tp_procesadas/*
+for l in ./imagenes_tp_procesadas/*
 do
    NOMBRE_Y_EDAD=$(basename "$l")
    NOMBRE_Y_APELLIDO=$(echo "$NOMBRE_Y_EDAD" | cut -d "," -f1)
