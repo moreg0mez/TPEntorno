@@ -20,20 +20,36 @@ done
 
 echo "Los nombres de todas las imagenes fueron guardados en listadenombres.txt"
 
-#Creamos un archivo vacío, donde almacenaremos la lista de nombres VÁLIDOS de las imágenes.
-touch listadenombresconA.txt
+#Creamos un archivo vacío, donde almacenaremos la lista de nombres válidos de las imágenes.
+touch nombresvalidos.txt
 
 #Iteramos dentro de los archivos contenidos en la carpeta imagenes_tp_procesadas.
 for f in ./imagenes_tp_procesadas/*
 do                       
-  NOMBRE=$(basename "$f")  #Nos quedamos con el nombre de los archivos.
+  NOMBREVALIDO=$(basename "$f")  #Nos quedamos con el nombre de los archivos.
+   
+   echo "$NOMBREVALIDO" >> "$nombresvalidos.txt" #Se agregan dichos nombres al nuevo archivo creado.
+done 
 
-  if [[ "$NOMBRE" = A* ]]        #Chequeamos que dichos nombres comiencen con la letra A.
+#Creamos un archivo vacío, el cual contendrá los nombres válidos que finalicen en A.
+touch nombresterminadosenA.txt 
+
+#Iteramos dentro del archivo de nombres válidos previamente creado.
+for l in $(cat nombresvalidos.txt)
+  if [[ "$NOMBREAFINAL" == A* ]]        #Chequeamos que dichos nombres terminen con la letra A.
   then
-    echo "$NOMBRE" >> "$listadenombresconA.txt" #En caso de que así sea, se agregan los mismos al nuevo archivo creado.
+    echo "$NOMBREAFINAL" >> "$nombresterminadosenA.txt" #En caso de que así sea, se agregan los mismos al archivo.
   else continue #Caso contrario, continúa iterando.
   fi 
   
 done 
 
-echo "Los nombres con A fueron guardados en listadenombresconA.txt"
+echo "Los nombres terminados en A fueron guardados en listadenombresconA.txt"
+
+#Empaquetamos y comprimimos los archivos con los nombres e imágenes.
+echo "Comprimiendo archivos de texto e imagenes..."
+zip -r nombreseimagenes_tp.zip imagenes_tp listadenombres.txt nombresvalidos.txt nombresterminadosenA.txt
+
+echo "Archivos comprimidos de forma exitosa"
+
+exit 0
