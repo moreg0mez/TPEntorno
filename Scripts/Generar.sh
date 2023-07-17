@@ -34,7 +34,7 @@ zip -r imagenes_tp.zip imagenes_tp
 
 #Genero el archivo checksum
 echo "Generando checksum..."
-md5sum imagenes_tp.zip > chk_sum.txt #redirecciono el chechum al archivo .txt
+md5sum imagenes_tp.zip > chk_sum.txt #redirecciono el checksum al archivo .txt
 
 echo "TODO LISTO!"
 
