@@ -3,11 +3,14 @@
 #voy a la carpeta donde esta imagenes_tp
 cd ..
 
+[ -e imagenes_tp_procesadas ] && echo "ERROR: La carpeta imagenes_tp_procesadas ya existe, continue con la opcion 4)" && exit 1
+
 #Verifico que exista, si no retorno un mensaje de error.
 if [ -e imagenes_tp ]; then
    echo "La carpeta de imagenes existe... procesando imagenes..."
 else
-   echo "ERROR: La carpeta de imagenes NO EXISTE. Antes debe ejecutar Generar.sh"
+   echo -e "ERROR: La carpeta de imagenes NO EXISTE. Antes debe ejecutar Generar.shn\n"
+   exit 1
 fi
 
 #Aclaro que no hace falte incluir argumentos, el script solo necesita ser

@@ -3,6 +3,9 @@
 #Navegamos hasta la carpeta donde está el contenido a usar.
 cd ..
 
+#Si el LAST.zip ya fue comprimido tiramos este ERROR
+[ -e LAST.zip ] && echo "ERROR: El archivo LAST.zip ya existe: Elija opcion 1) para volver a comenzar" && exit 1
+
 #Este script no necesita argumentos, en caso contrario retornamos un mensaje de error
 [ "$#" -ne 0 ] && echo -e "ERROR: Ejecute el script sin argumentos\n" && exit 1
 
