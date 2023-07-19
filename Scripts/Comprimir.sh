@@ -49,12 +49,16 @@ do
    fi
 done
 
-echo "Los nombres terminados en a fueron guardados en nombres_a" 
+echo "Los nombres terminados en a fueron guardados en nombres_a"
 
 #Empaquetamos y comprimimos los archivos con los nombres e imágenes.
 echo "Comprimiendo archivos de texto e imagenes..."
 zip -r LAST.zip imagenes_tp imagenes_tp_procesadas lista_nombres.txt nombres_validos.txt nombres_a.txt
 echo "Archivos comprimidos de forma exitosa"
+
+
+mv LAST.zip ./imagenes_comprimidas_tp/ #Guardamos el zip en la carpeta que mapeamos
+chmod -R 777 ./imagenes_comprimidas_tp/LAST.zip
 
 #Borramos el contenido que no usaremos.
 rm -r imagenes_tp
@@ -64,3 +68,4 @@ rm nombres_validos.txt
 rm nombres_a.txt
 
 exit 0
+

@@ -5,12 +5,12 @@ cd ..
 
 
 #Vemos si ya se corrieron todos los scpripts
-if [ -e LAST.zip ]; then
+if [ -e "./imagenes_comprimidas_tp/LAST.zip" ]; then
     read -p "¿ Desea borrar el Zip final y comenzar de nuevo ? (1 = SI, 0 = NO): " RESP
     if [ "$RESP" == "0" ]; then
        exit 1
     else
-       rm LAST.zip
+       rm  "./imagenes_comprimidas_tp/LAST.zip"
     fi
 fi
 
