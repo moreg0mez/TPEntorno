@@ -1,23 +1,21 @@
 # TPEntorno
 Trabajo práctico final Entorno de Programación - TUIA
 
-__El siguiente trabajo tiene por finalidad poner en práctica los conocimientos adquiridos durante el cursado de la materia Entorno de Programación en el marco de la Tecnicatura en Inteligencia Artificial de la UNR, consistiendo el mismo en la generación de un contenedor Docker mediante el cual el usuario pueda procesar un lote de imágenes, según distintas opciones presentadas en un menú.__
+_El siguiente trabajo tiene por finalidad poner en práctica los conocimientos adquiridos durante el cursado de la materia Entorno de Programación en el marco de la Tecnicatura en Inteligencia Artificial de la UNR, consistiendo el mismo en la generación de un contenedor Docker mediante el cual el usuario pueda procesar un lote de imágenes, según distintas opciones presentadas en un menú._
 
 Procederemos a detallar las instrucciones para su correcta implementación:
 
 1. Verifique que su computadora tenga acceso a internet
 
-2. Conceda permisos de Lectura, Escritura y Ejecución a "otros" en el directorio en donde se encuentra el Dockerfile. 
-
-3. Ejecute el siguiente comando en el directorio donde se encuentra el Dockerfile
+2. Ejecute el siguiente comando en el directorio donde se encuentra el Dockerfile
 
 sudo docker build --tag tuia2023/tp_grupo3:1.0 .
 
-4. Ejecute el siguiente comando para correr la imagen 
+3. Ejecute el siguiente comando para correr la imagen 
 
 sudo docker run -it --name tp_grupo3_2023 -v ./imagenes_comprimidas_tp:/TPEntorno/imagenes_comprimidas_tp tuia2023/tp_grupo3:1.0
 
-5. El archivo ZIP con las imágenes se guardará en el directorio "imagenes_comprimidas_tp" ubicado en la misma ruta que el archivo Dockerfile
+4. El archivo ZIP con las imágenes se guardará en el directorio "imagenes_comprimidas_tp" ubicado en la misma ruta que el archivo Dockerfile
 
 ## Detalles sobre opciones del menú
 
