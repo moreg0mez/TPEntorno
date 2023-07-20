@@ -3,6 +3,14 @@
 #Cambio al directorio donde deben estar el .zip y el .txt
 cd ..
 
+#Es para si se usa la opcion 2) dos veces seguidas, entonces tira ERROR
+[ -e imagenes_tp ] && echo "ERROR: Las imagenes ya fueron descomprimidas continue con la opcion 3)" && exit 1 
+
+#Esto ya esta en el menu pero lo pongo aca asi el script solo tambien hace las verificaciones
+! [ -e imagenes_tp.zip ] && echo -e "ERROR: El archivo imagenes_tp.zip NO EXISTE, primero ejecute Generar.sh\n" && exit 1
+! [ -e chk_sum.txt ] && echo -e "ERROR: El archivo chk_sum.txt NO EXISTE, primero ejecute Generar.sh\n" && exit 1
+
+#esto quedo redundante pero no lo quiero tocar por las dudas
 #Verifico que los argumentos sean correctos y que los archivos existan
 if ([ "$1" == "imagenes_tp.zip" ] && [ -e imagenes_tp.zip ]); then
    echo "el archivo .zip existe, aguarde..."
@@ -34,8 +42,7 @@ else
    exit 1
 fi
 
-#Borro las imagenes anteriores y descomprimo el zip
-rm -r imagenes_tp
+
 unzip imagenes_tp.zip
 echo "Las imagenes fueron descomprimidas exitosamente"
 

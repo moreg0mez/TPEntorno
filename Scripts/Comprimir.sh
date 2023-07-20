@@ -3,6 +3,9 @@
 #Navegamos hasta la carpeta donde está el contenido a usar.
 cd ..
 
+#Si el LAST.zip ya fue comprimido tiramos este ERROR
+[ -e LAST.zip ] && echo "ERROR: El archivo LAST.zip ya existe: Elija opcion 1) para volver a comenzar" && exit 1
+
 #Este script no necesita argumentos, en caso contrario retornamos un mensaje de error
 [ "$#" -ne 0 ] && echo -e "ERROR: Ejecute el script sin argumentos\n" && exit 1
 
@@ -35,7 +38,7 @@ echo "Los nombres válidos fueron guardados en nombres_validos"
 
 
 #Iteramos dentro de la carpeta imagenes_tp_procesadas.
-for f in ./imagenes_tp_procesadas/*
+for l in ./imagenes_tp_procesadas/*
 do
    NOMBRE_Y_EDAD=$(basename "$l")
    NOMBRE_Y_APELLIDO=$(echo "$NOMBRE_Y_EDAD" | cut -d "," -f1)
@@ -46,12 +49,16 @@ do
    fi
 done
 
-echo "Los nombres terminados en a fueron guardados en nombres_a" 
+echo "Los nombres terminados en a fueron guardados en nombres_a"
 
 #Empaquetamos y comprimimos los archivos con los nombres e imágenes.
 echo "Comprimiendo archivos de texto e imagenes..."
 zip -r LAST.zip imagenes_tp imagenes_tp_procesadas lista_nombres.txt nombres_validos.txt nombres_a.txt
 echo "Archivos comprimidos de forma exitosa"
+
+
+mv LAST.zip ./imagenes_comprimidas_tp/ #Guardamos el zip en la carpeta que mapeamos
+chmod -R 777 ./imagenes_comprimidas_tp/LAST.zip
 
 #Borramos el contenido que no usaremos.
 rm -r imagenes_tp
@@ -61,3 +68,4 @@ rm nombres_validos.txt
 rm nombres_a.txt
 
 exit 0
+
