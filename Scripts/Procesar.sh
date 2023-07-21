@@ -10,7 +10,7 @@ cd ..
 if [ -e imagenes_tp ]; then
    echo "La carpeta de imagenes existe... procesando imagenes..."
 else
-   echo -e "ERROR: La carpeta de imagenes NO EXISTE. Antes debe ejecutar Generar.shn\n"
+   echo -e "ERROR: La carpeta de imagenes NO EXISTE. Antes debe ejecutar 1)\n"
    exit 1
 fi
 

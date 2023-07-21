@@ -38,9 +38,9 @@ echo "Los nombres válidos fueron guardados en nombres_validos"
 
 
 #Iteramos dentro de la carpeta imagenes_tp_procesadas.
-for l in ./imagenes_tp_procesadas/*
+for i in ./imagenes_tp_procesadas/*
 do
-   NOMBRE_Y_EDAD=$(basename "$l")
+   NOMBRE_Y_EDAD=$(basename "$i")
    NOMBRE_Y_APELLIDO=$(echo "$NOMBRE_Y_EDAD" | cut -d "," -f1)
    NOMBRE_SOLO=$( echo "$NOMBRE_Y_APELLIDO" | cut -d " " -f1)
    if [[ "$NOMBRE_SOLO" =~ a$ ]];      #Chequeamos si los nombres terminan en a.
