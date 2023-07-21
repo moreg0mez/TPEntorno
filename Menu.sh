@@ -20,11 +20,11 @@ do
              cd ..
              # Estas verificaciones podrían omitirse dado que el script ya las tiene, pero cumplen el objetivo de evitar pedir  input al usuario
              # en caso de que los archivos no existan. 
-             ! [ -e imagenes_tp.zip ] && echo -e "ERROR: El archivo imagenes_tp.zip NO EXISTE, primero ejecute Generar.sh\n" && cd Scripts && continue
-             ! [ -e chk_sum.txt ] && echo -e "ERROR: El archivo chk_sum.txt NO EXISTE, primero ejecute Generar.sh\n" && cd Scripts && continue
+             ! [ -e imagenes_tp.zip ] && echo -e "ERROR: El archivo imagenes_tp.zip NO EXISTE, primero ejecute 1)\n" && cd Scripts && continue
+             ! [ -e chk_sum.txt ] && echo -e "ERROR: El archivo chk_sum.txt NO EXISTE, primero ejecute 1)\n" && cd Scripts && continue
              cd Scripts
-             read -p "Ingrese el nombre del zip (imagenes_tp.zip):" ARG1
-             read -p "Ingrese el nombre del checksum (chk_sum.txt):" ARG2
+             read -p 'Ingrese el nombre del zip --> "imagenes_tp.zip": ' ARG1
+             read -p 'Ingrese el nombre del checksum --> "chk_sum.txt": ' ARG2
              bash ./Descomprimir.sh "$ARG1" "$ARG2"
              ;;
 
