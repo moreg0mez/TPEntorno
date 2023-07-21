@@ -10,11 +10,11 @@ cd ..
 if [ -e imagenes_tp ]; then
    echo "La carpeta de imagenes existe... procesando imagenes..."
 else
-   echo -e "ERROR: La carpeta de imagenes NO EXISTE. Antes ejecute 1) o 2)\n"
+   echo -e "ERROR: La carpeta de imagenes NO EXISTE. Antes debe ejecutar Generar.shn\n"
    exit 1
 fi
 
-#Aclaramos que no es necesario incluir argumentos, ya que el script solo necesita ser
+#Aclaro que no hace falte incluir argumentos, el script solo necesita ser
 #ejecutado para procesar las imagenes
 [ "$#" -ne 0 ] && echo "Ejecute el script sin argumentos" && exit 1
 
