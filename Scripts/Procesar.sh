@@ -6,7 +6,7 @@ cd ..
 #En caso de que se intente ejecuar dos veces el script Procesar.sh, se retorna error
 [ -e imagenes_tp_procesadas ] && echo "ERROR: La carpeta imagenes_tp_procesadas ya existe, continue con la opcion 4)" && exit 1
 
-#Verificsmod que exista, si no retorno un mensaje de error.
+#Verificamos que exista, en caso contrario retornamos un mensaje de error.
 if [ -e imagenes_tp ]; then
    echo "La carpeta de imagenes existe... procesando imagenes..."
 else
@@ -14,7 +14,7 @@ else
    exit 1
 fi
 
-#Aclaramos que no es necesario incluir argumentos, el script solo necesita ser
+#Aclaramos que no es necesario incluir argumentos, ya que el script solo necesita ser
 #ejecutado para procesar las imagenes
 [ "$#" -ne 0 ] && echo "Ejecute el script sin argumentos" && exit 1
 
