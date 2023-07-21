@@ -10,8 +10,8 @@ cd ..
 [ "$#" -ne 0 ] && echo -e "ERROR: Ejecute el script sin argumentos\n" && exit 1
 
 #Verificamos que existan las carpetas necesarias
-! [ -e "imagenes_tp" ] && echo -e "ERROR: La carpeta imagenes_tp NO EXISTE, antes ejecute Generar.sh\n" && exit 1
-! [ -e "imagenes_tp_procesadas" ] && echo -e "ERROR: La carpeta imagenes_tp_procesadas NO EXISTE, antes ejecute Generar.sh\n" && exit 1
+! [ -e "imagenes_tp" ] && echo -e "ERROR: La carpeta imagenes_tp NO EXISTE, antes ejecute opciones 1) o 2)\n" && exit 1
+! [ -e "imagenes_tp_procesadas" ] && echo -e "ERROR: La carpeta imagenes_tp_procesadas NO EXISTE, antes ejecute 3) --> Procesar.sh\n" && exit 1
 echo -e "Las carpetas necesarias existen, aguarde\n"
 
 #Borramos el contenido que no se utilizará.

@@ -46,6 +46,14 @@ fi
 unzip imagenes_tp.zip
 echo "Las imagenes fueron descomprimidas exitosamente"
 
+#Imprimimos nuevamente el menu para facilitar la eleccion de opciones
+echo -e "Lista de opciones:" 
+echo -e "1) Generar.sh" 
+echo -e "2) Descomprimir.sh"
+echo -e "3) Procesar.sh"
+echo -e "4) Comprimir.sh"
+echo -e "5) Quit" 
+
 exit 0
 
 
